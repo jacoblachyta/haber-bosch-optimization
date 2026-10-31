@@ -8,3 +8,10 @@ P_STANDARD_BAR = 1 # bar
 
 KP_REF = 5.43e5
 
+# Initial feed in moles
+N_N2_FEED = 1.0
+N_H2_FEED = 3.0
+N_NH3_FEED = 0.0
+
+
+
