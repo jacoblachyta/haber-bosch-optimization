@@ -28,12 +28,33 @@ These are the tools I plan to use in this project.
 - Matplotlib
 - Git and GitHub
 
+## Thermodynamic Model
+
+The temperature dependence of the ammonia synthesis equilibrium constant is modeled using the integrated van 't Hoff equation, assuming constant reaction enthalpy.
+
+The equilibrium constant at a given temperature is calculated using the following equation:
+Kp(T) = Kp,ref × exp[-(ΔH°rxn / R) × (1/T - 1/Tref)]
+
+Reference values:
+
+Reference temperature: 298.15 K
+Reference equilibrium constant: approximately \(5.43\times10^5\)
+Reaction enthalpy: −92,400 J/mol of reaction as written
+Gas constant: 8.31446 J/(mol·K)
+Standard-state pressure: 1 bar
+
+The reference equilibrium constant was calculated using standard Gibbs energies of formation from the NIST-JANAF Thermochemical Tables, using the following equation:
+Kp,ref = exp(-ΔG°rxn / RTref)
+
 ## Current Status
 
-The project is in development. I have defined the initial thermodynamic constants and parameters and am beginning to implement the calculations needed to model the reaction's equilibrium under different operating conditions.
+The project is in development. The initial thermodynamic constants and parameters have been defined, and a temperature-dependent equilibrium constant is calculated using the integrated van 't Hoff equation. The next stage will involve modeling the equilibrium composition under different operating conditions.
 
 ## Assumptions and Limitations
 
 The initial model will use simplified assumptions. The results will represent a theoretical model of the reaction rather than a complete simulation of an industrial reactor.
+
+- Reaction enthalpy is assumed to be constant.
+- The model does not yet account for non-ideal gas behavior, catalyst kinetics, or industrial reactor design.
 
 As the project develops, I plan on documenting additional assumptions and limitations. 
